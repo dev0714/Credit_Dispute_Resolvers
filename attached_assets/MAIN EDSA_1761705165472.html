@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Erase Debt SA - Clear Your Name & Take Back Your Financial Freedom</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 50%, #16213e 100%);
+      color: white;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .header {
+      background: linear-gradient(135deg, rgba(0,0,0,0.95), rgba(20,20,20,0.9));
+      backdrop-filter: blur(15px);
+      border-bottom: 3px solid rgba(0,255,255,0.8);
+      padding: 1.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 20px rgba(0,255,255,0.4);
+    }
+    .logo { 
+      text-align: center; 
+      color: #00ffff; 
+      font-size: 3rem; 
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      text-shadow: 
+        0 0 10px rgba(0,255,255,1),
+        0 0 20px rgba(0,255,255,0.8),
+        0 0 30px rgba(0,255,255,0.6),
+        0 0 40px rgba(0,255,255,0.4);
+      animation: logoGlow 3s ease-in-out infinite alternate;
+      margin: 0;
+      padding: 0.5rem 0;
+    }
+    @keyframes logoGlow {
+      from { 
+        text-shadow: 
+          0 0 10px rgba(0,255,255,1),
+          0 0 20px rgba(0,255,255,0.8),
+          0 0 30px rgba(0,255,255,0.6);
+      }
+      to { 
+        text-shadow: 
+          0 0 15px rgba(255,0,150,1),
+          0 0 25px rgba(255,0,150,0.8),
+          0 0 35px rgba(255,0,150,0.6);
+      }
+    }
+    .hero {
+      padding: 4rem 0;
+      text-align: center;
+      background: linear-gradient(45deg, rgba(255,0,150,0.1), rgba(0,255,255,0.1));
+      border-radius: 20px;
+      margin: 2rem 0;
+      border: 1px solid rgba(0,255,255,0.3);
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      background: linear-gradient(45deg, #ff0096, #00ffff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 2rem;
+      animation: glow 2s ease-in-out infinite alternate;
+      text-shadow: 0 0 20px rgba(0,255,255,0.8);
+    }
+    @keyframes glow {
+      from { text-shadow: 0 0 20px rgba(0,255,255,0.5); }
+      to { text-shadow: 0 0 30px rgba(255,0,150,0.8); }
+    }
+    .fire-questions {
+      display: grid;
+      gap: 1rem;
+      margin: 2rem 0;
+      text-align: left;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .fire-question {
+      padding: 1rem;
+      background: rgba(255,0,150,0.2);
+      border-left: 4px solid #ff0096;
+      border-radius: 8px;
+      font-weight: bold;
+      color: white;
+    }
+    .services {
+      padding: 4rem 0;
+      background: rgba(0,0,0,0.3);
+      margin: 2rem 0;
+      border-radius: 20px;
+      border: 1px solid rgba(0,255,255,0.2);
+    }
+    .services h2 {
+      color: #00ffff;
+      font-size: 2.5rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-align: center;
+      margin-bottom: 3rem;
+      text-shadow: 0 0 15px rgba(0,255,255,0.8);
+    }
+    .service-list {
+      display: grid;
+      gap: 1rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .service-item {
+      padding: 1.5rem;
+      background: linear-gradient(45deg, rgba(0,255,255,0.1), rgba(255,0,150,0.1));
+      border: 1px solid rgba(0,255,255,0.3);
+      border-radius: 12px;
+      transition: transform 0.3s;
+      color: white;
+    }
+    .service-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,255,255,0.3);
+    }
+    .contact-section {
+      padding: 4rem 0;
+      text-align: center;
+      background: linear-gradient(45deg, rgba(255,0,150,0.2), rgba(0,255,255,0.2));
+      border-radius: 20px;
+      margin: 2rem 0;
+      border: 2px solid rgba(255,0,150,0.5);
+    }
+    .contact-section h2 {
+      color: #ff0096;
+      font-size: 2.5rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 15px rgba(255,0,150,0.8);
+    }
+    .contact-info {
+      display: grid;
+      gap: 1rem;
+      max-width: 600px;
+      margin: 2rem auto;
+    }
+    .contact-item {
+      padding: 1rem;
+      background: rgba(0,0,0,0.8);
+      border-radius: 8px;
+      border: 1px solid rgba(0,255,255,0.3);
+      color: white;
+    }
+    .btn {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: linear-gradient(45deg, #ff0096, #00ffff);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: all 0.3s;
+      border: none;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0,255,255,0.5);
+    }
+    .footer {
+      background: rgba(0,0,0,0.8);
+      padding: 2rem 0;
+      text-align: center;
+      border-top: 1px solid rgba(0,255,255,0.3);
+      margin-top: 3rem;
+    }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .container { padding: 0 15px; }
+    }
+    
+    .urgency-banner {
+      background: linear-gradient(45deg, #ff0096, #ff4500);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      animation: urgencyPulse 2s infinite;
+    }
+    .blink {
+      animation: blink 1s infinite;
+      font-weight: 900;
+      font-size: 1.1rem;
+    }
+    @keyframes blink {
+      0%, 50% { opacity: 1; }
+      51%, 100% { opacity: 0.7; }
+    }
+    @keyframes urgencyPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.02); }
+    }
+    
+    .cta-section {
+      text-align: center;
+      margin: 3rem 0;
+    }
+    .social-proof {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .success-stat {
+      background: rgba(0,255,255,0.2);
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      border: 1px solid #00ffff;
+      color: #00ffff;
+      font-weight: bold;
+    }
+    .cta-button {
+      background: linear-gradient(45deg, #ff0096, #00ffff);
+      color: white;
+      border: none;
+      padding: 1.5rem 3rem;
+      font-size: 1.3rem;
+      font-weight: 900;
+      border-radius: 50px;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 10px 30px rgba(255,0,150,0.4);
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+    .cta-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 15px 40px rgba(255,0,150,0.6);
+    }
+    .cta-subtext {
+      margin-top: 1rem;
+      color: #ff0096;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+    
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    .testimonial-card {
+      background: rgba(0,255,255,0.2);
+      border: 1px solid #00ffff;
+      border-radius: 15px;
+      padding: 1.5rem;
+      text-align: center;
+      color: white;
+    }
+    .testimonial-card p {
+      color: white;
+      font-style: italic;
+      margin-bottom: 1rem;
+    }
+    .testimonial-card span {
+      color: #00ffff;
+      font-weight: bold;
+    }
+    
+    .scarcity-section {
+      background: linear-gradient(45deg, rgba(255,0,150,0.2), rgba(255,69,0,0.2));
+      padding: 3rem 0;
+      margin: 2rem 0;
+    }
+    .scarcity-box {
+      background: rgba(0,0,0,0.9);
+      border: 2px solid #ff0096;
+      border-radius: 15px;
+      padding: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: white;
+    }
+    .scarcity-box ul {
+      list-style: none;
+      padding: 0;
+    }
+    .scarcity-box li {
+      padding: 0.5rem 0;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+    
+    /* Thinking Bubble Popup Styles */
+    .thinking-bubble {
+      position: fixed;
+      width: 300px;
+      background: linear-gradient(135deg, #ff0096, #00ffff);
+      border-radius: 25px;
+      padding: 20px;
+      color: white;
+      font-weight: bold;
+      z-index: 9999;
+      animation: bounceIn 0.8s ease, floatAround 15s linear infinite;
+      box-shadow: 0 10px 30px rgba(255,0,150,0.4);
+      cursor: pointer;
+      display: none;
+      transition: all 0.3s ease;
+    }
+    .thinking-bubble::before {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 30px;
+      width: 0;
+      height: 0;
+      border: 15px solid transparent;
+      border-top-color: #ff0096;
+    }
+    .thinking-bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -25px;
+      left: 40px;
+      width: 10px;
+      height: 10px;
+      background: #ff0096;
+      border-radius: 50%;
+    }
+    @keyframes bounceIn {
+      0% { transform: scale(0); opacity: 0; }
+      50% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+    @keyframes floatAround {
+      0% { 
+        transform: translate(20px, 150px) scale(1);
+        opacity: 1;
+      }
+      20% { 
+        transform: translate(calc(100vw - 350px), 200px) scale(1.05);
+        opacity: 0.9;
+      }
+      40% { 
+        transform: translate(calc(100vw - 350px), calc(100vh - 250px)) scale(1);
+        opacity: 1;
+      }
+      60% { 
+        transform: translate(50px, calc(100vh - 300px)) scale(1.02);
+        opacity: 0.95;
+      }
+      80% { 
+        transform: translate(200px, 100px) scale(1);
+        opacity: 1;
+      }
+      100% { 
+        transform: translate(20px, 150px) scale(1);
+        opacity: 1;
+      }
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    .bubble-close {
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .bubble-question {
+      margin-bottom: 15px;
+      font-size: 0.9rem;
+      line-height: 1.3;
+    }
+    .bubble-buttons {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .bubble-btn {
+      background: rgba(255,255,255,0.9);
+      color: #ff0096;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 15px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 0.8rem;
+      transition: all 0.3s ease;
+    }
+    .bubble-btn:hover {
+      background: white;
+      transform: scale(1.05);
+    }
+    
+    /* Callback Form Modal */
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      z-index: 10000;
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+    .popup-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+      border: 2px solid #ff0096;
+      border-radius: 20px;
+      padding: 2rem;
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      animation: slideIn 0.5s ease;
+      box-shadow: 0 20px 60px rgba(255,0,150,0.4);
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideIn {
+      from { transform: translate(-50%, -60%); opacity: 0; }
+      to { transform: translate(-50%, -50%); opacity: 1; }
+    }
+    .popup-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: none;
+      border: none;
+      color: #ff0096;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    .popup-title {
+      color: #ff0096;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 900;
+    }
+    .popup-question {
+      color: white;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+    .popup-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .popup-btn {
+      background: linear-gradient(45deg, #ff0096, #00ffff);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+    }
+    .popup-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 20px rgba(255,0,150,0.4);
+    }
+    .popup-btn.no-btn {
+      background: linear-gradient(45deg, #666, #888);
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        ERASE DEBT SA
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="urgency-banner">
+          <span class="blink">📋 PROFESSIONAL CREDIT CONSULTATION AVAILABLE 📋</span>
+        </div>
+        <h1>CLEAR YOUR NAME. REBUILD YOUR CREDIT. RECLAIM YOUR FUTURE.</h1>
+        
+        <div class="fire-questions">
+          <div class="fire-question">🔥 Stuck in debt review and can't get credit?</div>
+          <div class="fire-question">🔥 Need to remove negative credit listings?</div>
+          <div class="fire-question">🔥 Want expert guidance to clean your credit profile?</div>
+        </div>
+        
+        <p style="font-size: 1.2rem; margin: 2rem 0;">
+          We specialize in helping South Africans remove debt review statuses, clean up negative credit listings, and provide tailored advisory services to improve credit profiles. With expert teams, legal backing, and proven processes, we deliver transparent, personalized service nationwide.
+        </p>
+
+        <div class="cta-section">
+          <div class="social-proof">
+            <span class="success-stat">✅ Expert Credit Specialists</span>
+            <span class="success-stat">⚡ Legal Backing & Proven Processes</span>
+            <span class="success-stat">🏆 Transparent Communication</span>
+          </div>
+          <button class="cta-button pulse" onclick="document.getElementById('contact-form').scrollIntoView({behavior: 'smooth'})">
+            GET YOUR PROFESSIONAL CREDIT CONSULTATION NOW!
+          </button>
+          <p class="cta-subtext">👆 Click above for professional credit guidance - Let's clear your profile!</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="services">
+      <div class="container">
+        <h2>🚀 OUR SPECIALIST SERVICES</h2>
+        <div class="service-list">
+          <div class="service-item">
+            <h3 style="color: #ff0096; margin-bottom: 1rem;">✔ Debt Review Status Removal</h3>
+            <p><strong>C & D3 Status:</strong> Legal transfer and court document preparation for debt review exit (up to 12 weeks)<br>
+            <strong>D4 Status:</strong> Guidance for full debt settlement and clearance certificate process (up to 12 weeks)<br>
+            <strong>A Status:</strong> Complex transfer handling with affordability assessments (8-12 weeks)</p>
+          </div>
+          <div class="service-item">
+            <h3 style="color: #00ffff; margin-bottom: 1rem;">✔ ITC & Negative Listing Clearance</h3>
+            <p>Comprehensive 4-in-1 credit bureau cleanup using TransUnion, XDS, VeriCred, and Experian. Remove prescribed debts, expired enquiries (12+ months), paid-up judgments and admin orders. Timeline: 8-12 weeks after payment.</p>
+          </div>
+          <div class="service-item">
+            <h3 style="color: #ff0096; margin-bottom: 1rem;">✔ Credit Report & Advisory Services</h3>
+            <p><strong>4-in-1 Credit Reports:</strong> Comprehensive analysis from all major SA credit bureaus (2-3 weeks)<br>
+            <strong>Expert Credit Advice:</strong> Detailed written guidance on improving creditworthiness based on professional assessment (2-3 weeks)</p>
+          </div>
+          <div class="service-item">
+            <h3 style="color: #00ffff; margin-bottom: 1rem; font-size: 0.9rem;">⚠️ IMPORTANT LIMITATIONS</h3>
+            <p style="font-size: 0.9rem; color: #ffaa00;">We cannot remove: Current arrears, recent/active judgments, admin orders, or new enquiries. Only eligible, outdated, or incorrect items can be addressed. Each case is assessed individually after comprehensive credit checks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials-preview">
+      <div class="container">
+        <h2 style="color: #ff0096; text-align: center; margin-bottom: 2rem;">CLIENT TESTIMONIALS</h2>
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <p>"I never thought I'd qualify for credit again. Erase Debt SA guided me professionally and today my name is clean!"</p>
+            <span>- Satisfied Client</span>
+          </div>
+          <div class="testimonial-card">
+            <p>"Thank you for your patience and hard work! My negative listings are gone, and I can now move forward confidently."</p>
+            <span>- Happy Customer</span>
+          </div>
+          <div class="testimonial-card">
+            <p>"Highly recommend! Clear timelines, great communication, real results!"</p>
+            <span>- Grateful Client</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scarcity-section">
+      <div class="container">
+        <div class="scarcity-box">
+          <h3 style="color: #ff0096; text-align: center; margin-bottom: 1rem;">📋 OUR PROCESS</h3>
+          <ul style="color: white;">
+            <li>1️⃣ Professional Consultation & Sign-Up</li>
+            <li>2️⃣ 5-Business-Day Cooling-Off Period</li>
+            <li>3️⃣ Document Collection & Credit Analysis</li>
+            <li>4️⃣ Case Investigation & Legal Preparation</li>
+            <li>5️⃣ Action Phase & Creditor Communication</li>
+            <li>6️⃣ Completion & Final Confirmation</li>
+          </ul>
+          <p style="color: #ff0096; text-align: center; margin-top: 1rem; font-weight: bold;">Regular updates every 3-5 working days!</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact-form">
+      <div class="container">
+        <h2 style="color: #ff0096; font-size: 2.5rem; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 2rem; text-shadow: 0 0 15px rgba(255,0,150,0.8);">CONTACT OUR EXPERTS</h2>
+        <p style="font-size: 1.3rem; margin: 1rem 0; color: #00ffff;">
+          📞 Professional Credit Consultation Available
+        </p>
+        
+        <div class="contact-info">
+          <div class="contact-item">
+            <strong style="color: #00ffff;">📞 Office Numbers:</strong><br>
+            <span style="font-size: 1.2rem;">031 500 2220 | 031 109 5560</span><br>
+            <em style="color: #ff0096;">Professional consultation available</em>
+          </div>
+          <div class="contact-item">
+            <strong style="color: #00ffff;">📧 Email Queries:</strong><br>
+            <span style="font-size: 1.1rem;">queries@erasedebtsa.co.za</span><br>
+            <em style="color: #ff0096;">Updates every 3-5 working days</em>
+          </div>
+          <div class="contact-item">
+            <strong style="color: #00ffff;">🌐 Track Your Case:</strong><br>
+            <span style="font-size: 1.1rem;">www.erasedebtsa.net</span><br>
+            <em style="color: #ff0096;">Use your ID number to track progress</em>
+          </div>
+          <div class="contact-item">
+            <strong style="color: #00ffff;">⚠️ Important:</strong><br>
+            <span style="font-size: 0.9rem; color: #ffaa00;">5-day cooling-off period | R1955 non-refundable admin fee | DebiCheck payment system</span>
+          </div>
+        </div>
+        
+        <div style="margin: 3rem 0;">
+          <a href="tel:0315002220" class="btn">CONTACT OUR SPECIALISTS</a>
+        </div>
+        
+        <div style="background: rgba(255,255,0,0.1); padding: 1rem; border-radius: 8px; border: 1px solid rgba(255,255,0,0.3); margin-top: 2rem;">
+          <p style="color: #ffff00; font-size: 0.9rem;">
+            <strong>⏳ HOW FAST CAN IT BE DONE?</strong><br>
+            ✅ Services start ONLY after full payment has been made<br>
+            ✅ Processing takes between 1 to 12 weeks, depending on your case<br>
+            ✅ Some clients are cleared in as little as 1 week<br>
+            ✅ Worst case: 12 weeks after full payment & submission of all signed documents
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p style="color: #ffff00; margin-bottom: 1rem;">
+        <strong>DISCLAIMER:</strong> Erase Debt SA is not registered as a Financial Services Provider and does not provide financial advice. We provide administrative services for ITC record clearance and debt review removal only.
+      </p>
+      <p>© 2024 ERASE DEBT SA. ALL RIGHTS RESERVED. | ELITE DEBT CLEARANCE SPECIALISTS.</p>
+    </div>
+  </footer>
+
+  <!-- Thinking Bubble -->
+  <div id="thinkingBubble" class="thinking-bubble">
+    <button class="bubble-close" onclick="closeBubble()">&times;</button>
+    <div class="bubble-question" id="bubbleQuestion">
+      Are you being rejected for credit applications?
+    </div>
+    <div class="bubble-buttons">
+      <button class="bubble-btn" onclick="answerBubble('yes')">Yes, help me!</button>
+      <button class="bubble-btn" onclick="answerBubble('no')">Not really</button>
+    </div>
+  </div>
+
+  <!-- Callback Form Modal -->
+  <div id="callbackModal" class="popup-overlay">
+    <div class="popup-modal">
+      <button class="popup-close" onclick="closeCallbackModal()">&times;</button>
+      <div class="popup-title">GET YOUR FREE CONSULTATION NOW!</div>
+      <div style="color: white; margin-bottom: 2rem;">
+        <p>We'll call you back within 24 hours to discuss your debt clearance options.</p>
+      </div>
+      <form id="callbackForm" style="text-align: left;">
+        <div style="margin-bottom: 1rem;">
+          <label style="color: #00ffff; display: block; margin-bottom: 0.5rem;">Full Name:</label>
+          <input type="text" id="clientName" required style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #00ffff; background: rgba(255,255,255,0.9);">
+        </div>
+        <div style="margin-bottom: 1rem;">
+          <label style="color: #00ffff; display: block; margin-bottom: 0.5rem;">Phone Number:</label>
+          <input type="tel" id="clientPhone" required style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #00ffff; background: rgba(255,255,255,0.9);">
+        </div>
+        <div style="margin-bottom: 1rem;">
+          <label style="color: #00ffff; display: block; margin-bottom: 0.5rem;">Email:</label>
+          <input type="email" id="clientEmail" required style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #00ffff; background: rgba(255,255,255,0.9);">
+        </div>
+        <div style="margin-bottom: 1rem;">
+          <label style="color: #00ffff; display: block; margin-bottom: 0.5rem;">Main Credit Problem:</label>
+          <select id="creditProblem" required style="width: 100%; padding: 0.8rem; border-radius: 8px; border: 1px solid #00ffff; background: rgba(255,255,255,0.9);">
+            <option value="">Select your main issue</option>
+            <option value="debt-review">Debt Review Removal</option>
+            <option value="blacklist">Blacklist Clearance</option>
+            <option value="judgment">Judgment Removal</option>
+            <option value="credit-score">Credit Score Improvement</option>
+            <option value="admin-order">Admin Order Removal</option>
+          </select>
+        </div>
+        <button type="submit" class="popup-btn" style="width: 100%; margin-top: 1rem;">
+          BOOK MY FREE CONSULTATION
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let bubbleTimer = null;
+    let hasSeenBubble = false;
+    let currentQuestionIndex = 0;
+    
+    const bubbleQuestions = [
+      "Are you being rejected for credit applications?",
+      "Is bad credit stopping you from getting a home loan?",
+      "Do you need to remove debt review fast?",
+      "Are judgments blocking your financial progress?",
+      "Is blacklisting ruining your credit score?"
+    ];
+
+    function showThinkingBubble() {
+      if (hasSeenBubble) return;
+      
+      const bubble = document.getElementById('thinkingBubble');
+      bubble.style.display = 'block';
+      
+      // Update question
+      document.getElementById('bubbleQuestion').textContent = bubbleQuestions[currentQuestionIndex];
+      currentQuestionIndex = (currentQuestionIndex + 1) % bubbleQuestions.length;
+      
+      // Auto-hide after 15 seconds (one full animation cycle)
+      setTimeout(() => {
+        if (bubble.style.display === 'block') {
+          closeBubble();
+        }
+      }, 15000);
+    }
+
+    function closeBubble() {
+      document.getElementById('thinkingBubble').style.display = 'none';
+      
+      // Show next bubble in 20-40 seconds
+      if (!hasSeenBubble) {
+        const nextDelay = 20000 + Math.random() * 20000; // 20-40 seconds
+        setTimeout(showThinkingBubble, nextDelay);
+      }
+    }
+
+    function answerBubble(answer) {
+      document.getElementById('thinkingBubble').style.display = 'none';
+      
+      if (answer === 'yes') {
+        // Show callback form
+        document.getElementById('callbackModal').style.display = 'block';
+        document.body.style.overflow = 'hidden';
+      } else {
+        // Show different question later
+        setTimeout(() => {
+          if (!hasSeenBubble) {
+            showThinkingBubble();
+          }
+        }, 30000); // 30 seconds later
+      }
+    }
+
+    function closeCallbackModal() {
+      document.getElementById('callbackModal').style.display = 'none';
+      document.body.style.overflow = 'auto';
+      hasSeenBubble = true; // Stop showing bubbles after form interaction
+    }
+
+    // Handle form submission
+    document.getElementById('callbackForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const name = document.getElementById('clientName').value;
+      const phone = document.getElementById('clientPhone').value;
+      const email = document.getElementById('clientEmail').value;
+      const problem = document.getElementById('creditProblem').value;
+      
+      // Here you would normally send data to your backend
+      alert('Thank you ' + name + '! We will call you at ' + phone + ' within 24 hours to discuss your ' + problem + ' needs. Check your email for confirmation!');
+      
+      closeCallbackModal();
+      hasSeenBubble = true;
+    });
+
+    // Start showing bubbles immediately
+    window.addEventListener('load', () => {
+      // First bubble appears after just 2 seconds
+      setTimeout(showThinkingBubble, 2000);
+    });
+
+    // Also trigger on page ready
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(showThinkingBubble, 3000);
+    });
+
+    // Show bubble on scroll events
+    let scrollCount = 0;
+    window.addEventListener('scroll', () => {
+      scrollCount++;
+      if (scrollCount === 1 && !hasSeenBubble) { // After first scroll
+        setTimeout(showThinkingBubble, 1000);
+      }
+    });
+
+    // Force show bubble after 5 seconds regardless
+    setTimeout(() => {
+      if (!hasSeenBubble) {
+        showThinkingBubble();
+      }
+    }, 5000);
+
+    // Close modal when clicking outside
+    document.getElementById('callbackModal').addEventListener('click', (e) => {
+      if (e.target.id === 'callbackModal') {
+        closeCallbackModal();
+      }
+    });
+  </script>
+</body>
+</html>
